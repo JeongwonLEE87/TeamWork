@@ -7,5 +7,7 @@ public class Start {
 		
 		System.out.println("hello");
 		System.out.println("형 존나 멋있어 리얼 와..holly Shit ");
+		//세웅 추가 부분
+		System.out.println("hey guys! im here!!! ");
 	}
 }
