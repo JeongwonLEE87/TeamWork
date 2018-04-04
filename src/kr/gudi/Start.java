@@ -8,5 +8,9 @@ public class Start {
 		System.out.println("hello");
 		// 현섭 수정 부분
 		System.out.println("형 존나 멋있어 리얼 와..holly Shit ");
+		//세웅 추가 부분
+		System.out.println("hey guys! im here!!! ");
+		
+		System.out.println("세웅이가 추가한다 홍훙훙");
 	}
 }
