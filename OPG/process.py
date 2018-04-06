@@ -37,3 +37,9 @@ leagueName = re.findall(r"(\<div class=\"LeagueName\")([\s\S]+?)(\<\/div\>)", re
 for leagueNM in leagueName:
     lnm = leagueNM[1]
     print("<br> 당신의 리그는" + lnm + "입니다.")
+
+LeaguePoints = re.findall(r"(\<span class=\"LeaguePoints\"\>)([\s\S]+?)(\<\/span\>)",readData)
+for point in LeaguePoints :
+    temp = point[1]
+
+print("<br>당신의 리그 점수는 :" + temp + "입니다.")
