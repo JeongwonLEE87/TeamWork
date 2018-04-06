@@ -51,3 +51,11 @@ for ranking in LedderRanking:
     temp2 = ranking[3]
 
 print("<br>당신의 래더랭킹은 : " + temp +"  상위"+temp2 +  "입니다.")
+
+SwImg = re.findall(r"(\<img.*?class\=\"ProfileImage\"\>)", readData)
+print(SwImg[0])
+
+TierImg = re.findall(r"(\<img.*?class\=\"Image\"\>)", readData)
+print(TierImg[2])
+
+
