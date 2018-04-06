@@ -1,0 +1,35 @@
+#!python
+# coding: utf-8
+print("Content-Type: text/html; charset=utf-8\n")
+import cgi, urllib.request, re, urllib.parse
+data = cgi.FieldStorage()
+
+url = "http://www.op.gg/summoner/userName="
+
+#url2 = "http://localhost:8080/Servlet/ex/list.jsp?"
+
+realUrl = ""
+file_dir = "C:/Apache24/htdocs/OPG/recode.txt"
+
+if "userName" in data:
+    #print(data["userName"].value, "<br>")
+    param = urllib.parse.quote_plus(data["userName"].value)
+    realUrl = url + param
+    #print(realUrl)
+    urllib.request.urlretrieve(realUrl, file_dir)
+
+readData = ""
+temp = ""
+with open(file_dir, "r", encoding="utf8") as f: 
+    readData = f.read()
+
+tierList = re.findall(r"(\<span class=\"tierRank\"\>)([\s\S]+?)(\<\/span\>)", readData)
+for tier in tierList:
+    temp = tier[1]
+
+print("당신의 티어는 "+ temp + "입니다.")
+
+winRatioList = re.findall(r"(\<div id=\"WinRatioGraph\-summary\".*)(\<\/div>)([\s\S]+?)(\<\/div>)", readData)
+for winRatio in winRatioList:
+    a = winRatio[2].lstrip()
+    print("<br>최근 20게임 승률? "+a)
