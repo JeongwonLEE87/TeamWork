@@ -20,6 +20,7 @@ if "userName" in data:
 
 readData = ""
 temp = ""
+temp2 = ""
 with open(file_dir, "r", encoding="utf8") as f: 
     readData = f.read()
 
@@ -43,3 +44,10 @@ for point in LeaguePoints :
     temp = point[1]
 
 print("<br>당신의 리그 점수는 :" + temp + "입니다.")
+
+LedderRanking = re.findall(r"(\<span class=\"ranking\"\>)([\s\S]+?)(\<\/span\>)([\s\S]+?)(\<\/a\>)", readData)
+for ranking in LedderRanking:
+    temp = ranking[1]
+    temp2 = ranking[3]
+
+print("<br>당신의 래더랭킹은 : " + temp +"  상위"+temp2 +  "입니다.")
