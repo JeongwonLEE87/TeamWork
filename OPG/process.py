@@ -34,7 +34,7 @@ for winRatio in winRatioList:
     a = winRatio[2].lstrip()
     print("<br>최근 20게임 승률? "+a)
 
-leagueName = re.findall(r"(\<div class=\"LeagueName\")([\s\S]+?)(\<\/div\>)", readData)
+leagueName = re.findall(r"(\<div class=\"LeagueName\"\>)([\s\S]+?)(\<\/div\>)", readData)
 for leagueNM in leagueName:
     lnm = leagueNM[1]
     print("<br> 당신의 리그는" + lnm + "입니다.")
