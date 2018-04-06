@@ -26,10 +26,14 @@ with open(file_dir, "r", encoding="utf8") as f:
 tierList = re.findall(r"(\<span class=\"tierRank\"\>)([\s\S]+?)(\<\/span\>)", readData)
 for tier in tierList:
     temp = tier[1]
-
-print("당신의 티어는 "+ temp + "입니다.")
+    print("당신의 티어는 "+ temp + "입니다.")
 
 winRatioList = re.findall(r"(\<div id=\"WinRatioGraph\-summary\".*)(\<\/div>)([\s\S]+?)(\<\/div>)", readData)
 for winRatio in winRatioList:
     a = winRatio[2].lstrip()
     print("<br>최근 20게임 승률? "+a)
+
+leagueName = re.findall(r"(\<div class=\"LeagueName\")([\s\S]+?)(\<\/div\>)", readData)
+for leagueNM in leagueName:
+    lnm = leagueNM[1]
+    print("<br> 당신의 리그는" + lnm + "입니다.")
