@@ -12,7 +12,7 @@ public class Main extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	
 		System.out.println("doGet : Main");
 		getParam(req);
 	}
@@ -36,6 +36,5 @@ public class Main extends HttpServlet{
 			
 		}
 	}
-	
 
 }
